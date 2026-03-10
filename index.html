@@ -1959,7 +1959,6 @@
       const order = {
         time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
         date: new Date().toLocaleDateString('pt-BR'),
-        timestamp: Date.now(),
         status: 'novo', nome, tel, rua, num, bairro, comp,
         entrega: entregaVal, pagamento: pagVal, troco,
         items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, qty: i.qty })),
@@ -1975,12 +1974,20 @@
 
         if (supaError) throw supaError;
 
-        const orderId = supaData[0].id.toString().padStart(3, '0');
+        let orderId = '000';
+        if (supaData && supaData.length > 0) {
+          orderId = supaData[0].id.toString().padStart(3, '0');
+        } else {
+          // Se o select falhar (RLS), usamos os últimos 3 dígitos do timestamp para não quebrar a tela de sucesso
+          orderId = Date.now().toString().slice(-3);
+        }
+
         document.getElementById('suc-num').textContent = `#${orderId}`;
         closeOverlay('checkout');
         openOverlay('success');
         playSound();
         cart = []; updateCartUI();
+        upsellShown = false; // Reset para próximo pedido
       } catch (e) {
         showToast('❌ Erro ao enviar pedido. Tente novamente.', 'err');
         console.error(e);
