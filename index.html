@@ -1870,7 +1870,42 @@
   </div>
 
   <script>
-    const PHOTOS = { 80: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80', 81: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80', 82: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80', 1: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 2: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 3: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 10: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 11: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 12: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 13: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 14: 'https://images.unsplash.com/photo-1593504049359-74330189a345?w=400&q=80', 20: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 21: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 22: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 23: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 24: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 25: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 26: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 27: 'https://images.unsplash.com/photo-1605470841229-8580aa6ad186?w=400&q=80', 29: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 30: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 31: 'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80', 32: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 42: 'https://images.unsplash.com/photo-1582231242331-db6a9437976c?w=400&q=80', 43: 'https://images.unsplash.com/photo-1565257812910-ec9c10221fb0?w=400&q=80', 60: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 70: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80' };
+    const PHOTOS = {
+      80: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80',
+      81: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80',
+      82: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80',
+      1: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80',
+      2: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80',
+      3: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80',
+      10: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80',
+      11: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80',
+      12: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80',
+      13: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80',
+      14: 'https://images.unsplash.com/photo-1593504049359-74330189a345?w=400&q=80',
+      20: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80',
+      21: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80',
+      22: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80',
+      23: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80',
+      24: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80',
+      25: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80',
+      26: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80',
+      27: 'https://images.unsplash.com/photo-1605470841229-8580aa6ad186?w=400&q=80',
+      29: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80',
+      30: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80',
+      31: 'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80',
+      32: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80',
+      40: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      41: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      42: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      43: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      44: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      45: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      46: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      47: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      48: 'https://mhonpvgdklrapcdfovmv.supabase.co/storage/v1/object/sign/FOTOS%20clientes/editorial-style-valentine-s-day-celebration.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV81ODMwNzkwNC1kOTNlLTQxMTItYTYwZS05NWEyZmM2YzRlMDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJGT1RPUyBjbGllbnRlcy9lZGl0b3JpYWwtc3R5bGUtdmFsZW50aW5lLXMtZGF5LWNlbGVicmF0aW9uLmpwZyIsImlhdCI6MTc3MzMwMTIyNSwiZXhwIjoxODA0ODM3MjI1fQ.xKWXle5bCTvImj9DWyPAFtXZ8sNZJvBkS1ZjgKFJ-8A',
+      60: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80',
+      70: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80'
+    };
     const MENU = [
       { id: 80, cat: 'combos', name: 'Combo Pizza Broto', desc: 'Pizza broto 25cm + Guaraná lata 350ml', price: 34.90, old: 79.90, tag: 'MAIS VENDIDO' },
       { id: 81, cat: 'combos', name: 'Combo Pizza 2', desc: 'Uma saborosa pizza grande de até 2 sabores + Guaraná de 1 litro', price: 54.90, old: 109.90, tag: 'POPULAR' },
