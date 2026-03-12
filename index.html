@@ -9,6 +9,13 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap"
     rel="stylesheet">
 
+  <!-- SEO & Branding -->
+  <meta property="og:title" content="Pizzaria GYN — Goiânia">
+  <meta property="og:description" content="A melhor pizza de Goiânia. Sabor absurdo, massa artesanal e entrega rápida.">
+  <meta property="og:image" content="https://gyncardapio.netlify.app/logo-gyn.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo-gyn.jpg" type="image/jpeg">
+
   <!-- SUPABASE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
@@ -1600,9 +1607,11 @@
       <div class="hero-lines"></div>
       <div class="hero-pizza-glow"></div>
       <nav class="hero-nav">
-        <div class="hero-logo-wrap">
-          <span class="hero-logo">PIZZARIA GYN</span>
-          <span class="hero-logo-city">Goiânia · Goiás</span>
+        <div class="hero-logo-wrap" style="flex-direction: row; align-items: center; gap: 12px;">
+          <div style="display: flex; flex-direction: column;">
+            <span class="hero-logo">PIZZARIA GYN</span>
+            <span class="hero-logo-city">Goiânia · Goiás</span>
+          </div>
         </div>
         <div class="open-dot"><span></span>Aberto agora</div>
       </nav>
@@ -1721,287 +1730,298 @@
         </div>
         <button class="cfi-btn" onclick="openOverlay('cart')">Ver Carrinho →</button>
       </div>
+      <footer
+        style="text-align: center; padding: 60px 24px 140px; background: var(--dark); border-top: 1px solid var(--border); position: relative; z-index: 10;">
+        <div
+          style="font-family: 'Bebas Neue', serif; font-size: 28px; letter-spacing: 3px; color: var(--gold2); margin-bottom: 8px;">
+          PIZZARIA GYN</div>
+        <div
+          style="font-size: 11px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
+          Goiânia · Goiás</div>
+        <div style="margin-top: 40px; font-size: 10px; color: var(--text3); opacity: 0.5;">© 2026 Pizzaria GYN. Todos os
+          direitos reservados.</div>
+      </footer>
     </div>
-  </div>
 
-  <!-- OVERLAY: CART -->
-  <div class="overlay" id="ov-cart">
-    <div class="overlay-header">
-      <button class="back-btn" onclick="closeOverlay('cart')">←</button>
-      <span class="ov-title">MEU CARRINHO</span>
-    </div>
-    <div class="ov-content" id="cart-content"></div>
-    <div class="ov-fix-bottom">
-      <div class="ov-fix-in">
-        <button class="ov-cta gold" onclick="closeOverlay('cart');openOverlay('checkout')">FINALIZAR PEDIDO →</button>
+    <!-- OVERLAY: CART -->
+    <div class="overlay" id="ov-cart">
+      <div class="overlay-header">
+        <button class="back-btn" onclick="closeOverlay('cart')">←</button>
+        <span class="ov-title">MEU CARRINHO</span>
       </div>
-    </div>
-  </div>
-
-  <!-- OVERLAY: CHECKOUT -->
-  <div class="overlay" id="ov-checkout">
-    <div class="overlay-header">
-      <button class="back-btn" onclick="closeOverlay('checkout');openOverlay('cart')">←</button>
-      <span class="ov-title">FINALIZAR</span>
-    </div>
-    <div class="ov-content">
-      <div class="form-card">
-        <div class="form-card-title">👤 Seus Dados</div>
-        <div class="fg"><label class="fl">Nome *</label><input class="fi" id="f-nome" type="text"
-            placeholder="Seu nome completo"></div>
-        <div class="fg"><label class="fl">WhatsApp *</label><input class="fi" id="f-tel" type="tel"
-            placeholder="(62) 9 0000-0000"></div>
-      </div>
-      <div class="form-card">
-        <div class="form-card-title">📍 Endereço</div>
-        <div class="fg"><label class="fl">Rua / Avenida *</label><input class="fi" id="f-rua" placeholder="Nome da rua">
+      <div class="ov-content" id="cart-content"></div>
+      <div class="ov-fix-bottom">
+        <div class="ov-fix-in">
+          <button class="ov-cta gold" onclick="closeOverlay('cart');openOverlay('checkout')">FINALIZAR PEDIDO →</button>
         </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Número *</label><input class="fi" id="f-num" placeholder="Nº"></div>
-          <div class="fg"><label class="fl">Complemento</label><input class="fi" id="f-comp" placeholder="Apto...">
+      </div>
+    </div>
+
+    <!-- OVERLAY: CHECKOUT -->
+    <div class="overlay" id="ov-checkout">
+      <div class="overlay-header">
+        <button class="back-btn" onclick="closeOverlay('checkout');openOverlay('cart')">←</button>
+        <span class="ov-title">FINALIZAR</span>
+      </div>
+      <div class="ov-content">
+        <div class="form-card">
+          <div class="form-card-title">👤 Seus Dados</div>
+          <div class="fg"><label class="fl">Nome *</label><input class="fi" id="f-nome" type="text"
+              placeholder="Seu nome completo"></div>
+          <div class="fg"><label class="fl">WhatsApp *</label><input class="fi" id="f-tel" type="tel"
+              placeholder="(62) 9 0000-0000"></div>
+        </div>
+        <div class="form-card">
+          <div class="form-card-title">📍 Endereço</div>
+          <div class="fg"><label class="fl">Rua / Avenida *</label><input class="fi" id="f-rua"
+              placeholder="Nome da rua">
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Número *</label><input class="fi" id="f-num" placeholder="Nº"></div>
+            <div class="fg"><label class="fl">Complemento</label><input class="fi" id="f-comp" placeholder="Apto...">
+            </div>
+          </div>
+          <div class="fg"><label class="fl">Bairro *</label><input class="fi" id="f-bairro" placeholder="Seu bairro">
           </div>
         </div>
-        <div class="fg"><label class="fl">Bairro *</label><input class="fi" id="f-bairro" placeholder="Seu bairro">
-        </div>
-      </div>
-      <div class="form-card">
-        <div class="form-card-title">🚗 Entrega</div>
-        <div class="opt-list">
-          <div class="opt sel" id="e-delivery" onclick="selE('delivery')"><span class="opt-ico">🛵</span><span
-              class="opt-txt"><strong>Delivery</strong><small>Taxa R$ 7,00</small></span>
-            <div class="opt-radio" id="r-delivery"></div>
-          </div>
-          <div class="opt" id="e-retirada" onclick="selE('retirada')"><span class="opt-ico">🏠</span><span
-              class="opt-txt"><strong>Retirada</strong><small>Sem taxa</small></span>
-            <div class="opt-radio" id="r-retirada"></div>
+        <div class="form-card">
+          <div class="form-card-title">🚗 Entrega</div>
+          <div class="opt-list">
+            <div class="opt sel" id="e-delivery" onclick="selE('delivery')"><span class="opt-ico">🛵</span><span
+                class="opt-txt"><strong>Delivery</strong><small>Taxa R$ 7,00</small></span>
+              <div class="opt-radio" id="r-delivery"></div>
+            </div>
+            <div class="opt" id="e-retirada" onclick="selE('retirada')"><span class="opt-ico">🏠</span><span
+                class="opt-txt"><strong>Retirada</strong><small>Sem taxa</small></span>
+              <div class="opt-radio" id="r-retirada"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-card">
-        <div class="form-card-title">💳 Pagamento</div>
-        <div class="opt-list">
-          <div class="opt sel" id="p-pix" onclick="selP('pix')"><span class="opt-ico">📱</span><span
-              class="opt-txt"><strong>PIX</strong><small>Instantâneo</small></span>
-            <div class="opt-radio" id="r-pix"></div>
+        <div class="form-card">
+          <div class="form-card-title">💳 Pagamento</div>
+          <div class="opt-list">
+            <div class="opt sel" id="p-pix" onclick="selP('pix')"><span class="opt-ico">📱</span><span
+                class="opt-txt"><strong>PIX</strong><small>Instantâneo</small></span>
+              <div class="opt-radio" id="r-pix"></div>
+            </div>
+            <div class="opt" id="p-cartao" onclick="selP('cartao')"><span class="opt-ico">💳</span><span
+                class="opt-txt"><strong>Cartão</strong><small>Débito ou crédito</small></span>
+              <div class="opt-radio" id="r-cartao"></div>
+            </div>
+            <div class="opt" id="p-dinheiro" onclick="selP('dinheiro')"><span class="opt-ico">💵</span><span
+                class="opt-txt"><strong>Dinheiro</strong><small>Pague na entrega</small></span>
+              <div class="opt-radio" id="r-dinheiro"></div>
+            </div>
           </div>
-          <div class="opt" id="p-cartao" onclick="selP('cartao')"><span class="opt-ico">💳</span><span
-              class="opt-txt"><strong>Cartão</strong><small>Débito ou crédito</small></span>
-            <div class="opt-radio" id="r-cartao"></div>
-          </div>
-          <div class="opt" id="p-dinheiro" onclick="selP('dinheiro')"><span class="opt-ico">💵</span><span
-              class="opt-txt"><strong>Dinheiro</strong><small>Pague na entrega</small></span>
-            <div class="opt-radio" id="r-dinheiro"></div>
+          <div id="troco-box" style="display:none;margin-top:12px">
+            <label class="fl">Troco para quanto?</label>
+            <input class="fi" id="f-troco" type="number" placeholder="Ex: 100">
           </div>
         </div>
-        <div id="troco-box" style="display:none;margin-top:12px">
-          <label class="fl">Troco para quanto?</label>
-          <input class="fi" id="f-troco" type="number" placeholder="Ex: 100">
+        <div class="form-card">
+          <div class="form-card-title">📋 Resumo</div>
+          <div id="co-summary"></div>
         </div>
-      </div>
-      <div class="form-card">
-        <div class="form-card-title">📋 Resumo</div>
-        <div id="co-summary"></div>
-      </div>
-      <button class="ov-cta gold" style="width:100%;margin-top:6px" onclick="placeOrder()">✅ CONFIRMAR PEDIDO</button>
-    </div>
-  </div>
-
-  <!-- OVERLAY: SUCCESS -->
-  <div class="overlay" id="ov-success">
-    <div class="success-page">
-      <div class="suc-wrap">
-        <div class="suc-ring">✅</div>
-        <div class="suc-title">PEDIDO FEITO!</div>
-        <p class="suc-sub">Recebemos seu pedido e já estamos preparando.<br>Tempo: <strong
-            style="color:var(--gold2)">35–50 minutos</strong></p>
-        <div class="suc-badge">
-          <div class="suc-badge-lbl">Número do pedido</div>
-          <div class="suc-badge-num" id="suc-num">#001</div>
-          <div style="font-size:11px;color:var(--text3);margin-top:6px">Guarde este número</div>
-        </div>
-        <button class="suc-btn" onclick="resetApp()">🍕 Novo Pedido</button>
+        <button class="ov-cta gold" style="width:100%;margin-top:6px" onclick="placeOrder()">✅ CONFIRMAR PEDIDO</button>
       </div>
     </div>
-  </div>
 
-  <!-- UPSELL DRAWER -->
-  <div id="drawer-overlay"
-    style="position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:600;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)"
-    onclick="closeDrawer()"></div>
-  <div id="upsell-drawer"
-    style="position:fixed;bottom:0;left:0;right:0;z-index:700;transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.56,.64,1)">
-    <div
-      style="background:var(--dark3);border-radius:22px 22px 0 0;border-top:1px solid var(--border2);max-width:560px;margin:0 auto;overflow:hidden">
-      <div style="width:38px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 0"></div>
-      <div style="padding:18px 20px 14px;border-bottom:1px solid var(--border)">
-        <div style="font-family:'Bebas Neue',serif;font-size:25px;letter-spacing:1px;color:var(--text)">🔥 APROVEITE
-          TAMBÉM</div>
-        <div style="font-size:13px;color:var(--text2);margin-top:2px">Outros clientes também pediram:</div>
+    <!-- OVERLAY: SUCCESS -->
+    <div class="overlay" id="ov-success">
+      <div class="success-page">
+        <div class="suc-wrap">
+          <div class="suc-ring">✅</div>
+          <div class="suc-title">PEDIDO FEITO!</div>
+          <p class="suc-sub">Recebemos seu pedido e já estamos preparando.<br>Tempo: <strong
+              style="color:var(--gold2)">35–50 minutos</strong></p>
+          <div class="suc-badge">
+            <div class="suc-badge-lbl">Número do pedido</div>
+            <div class="suc-badge-num" id="suc-num">#001</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:6px">Guarde este número</div>
+          </div>
+          <button class="suc-btn" onclick="resetApp()">🍕 Novo Pedido</button>
+        </div>
       </div>
-      <div id="drawer-items"
-        style="padding:16px 20px;display:flex;flex-direction:column;gap:10px;max-height:55vh;overflow-y:auto"></div>
-      <button onclick="closeDrawer()"
-        style="margin:0 20px 20px;background:transparent;border:1px solid var(--border);color:var(--text3);border-radius:11px;padding:12px;width:calc(100% - 40px);font-size:14px;cursor:pointer;font-family:'Barlow',sans-serif">Não,
-        obrigado</button>
     </div>
-  </div>
 
-  <script>
-    const PHOTOS = { 80: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80', 81: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80', 82: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80', 1: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 2: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 3: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 10: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 11: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 12: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 13: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 14: 'https://images.unsplash.com/photo-1593504049359-74330189a345?w=400&q=80', 20: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 21: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 22: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 23: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 24: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 25: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 26: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 27: 'https://images.unsplash.com/photo-1605470841229-8580aa6ad186?w=400&q=80', 29: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 30: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 31: 'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80', 32: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 42: 'https://images.unsplash.com/photo-1582231242331-db6a9437976c?w=400&q=80', 43: 'https://images.unsplash.com/photo-1565257812910-ec9c10221fb0?w=400&q=80', 60: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 70: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80' };
-    const MENU = [{ id: 80, cat: 'combos', name: 'Combo Pizza Broto', desc: 'Pizza broto 25cm + Guaraná lata 350ml', price: 34.90, old: 79.90, tag: 'MAIS VENDIDO' }, { id: 81, cat: 'combos', name: 'Combo Pizza 2', desc: 'Pizza grande de até 2 sabores + bebida', price: 54.90, old: 109.90, tag: 'POPULAR' }, { id: 82, cat: 'combos', name: 'Combo de Pizza 1', desc: '2 pizzas grandes + Coca-Cola 2 litros', price: 99.99, old: 189.90, tag: 'MELHOR VALOR' }, { id: 1, cat: 'top-picks', name: 'Frango Catupiry', desc: 'Molho de tomate pelado, mussarela e catupiry especial', price: 49.90, old: 119.90, hot: true }, { id: 2, cat: 'top-picks', name: '4 Queijos', desc: 'Molho de tomate pelado, mussarela, catupiry, cheddar e parmesão', price: 49.90, old: 119.90, hot: true }, { id: 3, cat: 'top-picks', name: 'Calabresa', desc: 'Molho de tomate pelado, mussarela, calabresa e cebola', price: 49.90, old: 119.90, hot: true }, { id: 10, cat: 'tradicionais', name: 'Americana', desc: 'Molho de tomate pelado, mussarela, presunto, milho e ervilha', price: 49.90, old: 119.90 }, { id: 11, cat: 'tradicionais', name: 'Marguerita', desc: 'Molho de tomate pelado, mussarela, tomate cereja e manjericão', price: 49.90, old: 119.90 }, { id: 12, cat: 'tradicionais', name: 'Mussarela', desc: 'Molho de tomate pelado, mussarela e rodelas de tomate', price: 49.90, old: 119.90 }, { id: 13, cat: 'tradicionais', name: 'Calabresa', desc: 'Molho de tomate pelado, mussarela, calabresa e cebola', price: 49.90, old: 119.90 }, { id: 14, cat: 'tradicionais', name: 'Portuguesa', desc: 'Molho de tomate pelado, mussarela, presunto, pimentão e ovos', price: 49.90, old: 119.90 }, { id: 20, cat: 'especiais', name: 'Frango Catupiry', desc: 'Molho de tomate pelado, mussarela e catupiry especial', price: 49.90, old: 119.90 }, { id: 21, cat: 'especiais', name: '4 Queijos', desc: 'Mussarela, catupiry, cheddar e parmesão', price: 49.90, old: 119.90 }, { id: 22, cat: 'especiais', name: 'Caipira', desc: 'Mussarela, frango desfiado e milho', price: 49.90, old: 119.90 }, { id: 23, cat: 'especiais', name: 'Portobello', desc: 'Presunto, calabresa, ovos e milho', price: 49.90, old: 119.90 }, { id: 24, cat: 'especiais', name: 'Australiana', desc: 'Mussarela, calabresa e catupiry', price: 49.90, old: 119.90 }, { id: 25, cat: 'especiais', name: 'Crocante', desc: 'Mussarela, calabresa e barbecue', price: 49.90, old: 119.90 }, { id: 26, cat: 'especiais', name: 'Amoda', desc: 'Presunto, ovos, mussarela e creme', price: 49.90, old: 119.90 }, { id: 27, cat: 'especiais', name: 'Pizza de Bacon', desc: 'Mussarela e bacon em cubos', price: 49.90, old: 119.90 }, { id: 28, cat: 'especiais', name: 'Lombo Canadense', desc: 'Mussarela e lombo canadense', price: 49.90, old: 149.90 }, { id: 29, cat: 'especiais', name: 'Carne de Sol', desc: 'Mussarela e carne de sol', price: 49.90, old: 149.90 }, { id: 30, cat: 'especiais', name: 'Churrasco', desc: 'Mussarela e churrasco desfiado', price: 49.90, old: 149.90 }, { id: 31, cat: 'especiais', name: 'Peperone', desc: 'Molho especial, mussarela, peperone e manjericão', price: 59.90, old: 149.90 }, { id: 32, cat: 'especiais', name: 'Especial da Casa', desc: 'Mussarela, presunto e calabresa', price: 49.90, old: 119.90 }, { id: 40, cat: 'doces', name: 'Banoff', desc: 'Banana em rodelas com doce de leite cremoso', price: 49.90, old: 119.90 }, { id: 41, cat: 'doces', name: 'Pizza de Brigadeiro', desc: 'Chocolate com avelã, granulado e morango', price: 49.90, old: 119.90 }, { id: 42, cat: 'doces', name: 'Pizza de Cocada', desc: 'Coco ralado, leite condensado e creme de leite', price: 49.90, old: 119.90 }, { id: 43, cat: 'doces', name: 'Pizza de Churros', desc: 'Doce de leite cremoso com açúcar e canela', price: 49.90, old: 119.90 }, { id: 44, cat: 'doces', name: 'Banana com Canela', desc: 'Banana caramelizada com canela', price: 49.90, old: 119.90 }, { id: 45, cat: 'doces', name: 'Pizza de Chocolate com Morango', desc: 'Chocolate com morango fresco', price: 49.90, old: 119.90 }, { id: 46, cat: 'doces', name: 'Pizza de Prestígio', desc: 'Chocolate com coco ralado', price: 49.90, old: 119.90 }, { id: 47, cat: 'doces', name: 'Pizza de Banana Nevada', desc: 'Banana com coco ralado e leite condensado', price: 49.90, old: 119.90 }, { id: 48, cat: 'doces', name: 'Pizza de Romeu e Julieta', desc: 'Goiabada com catupiry especial', price: 49.90, old: 149.90 }, { id: 50, cat: 'calzones', name: 'Calzone Tradicional', desc: 'Massa italiana de fermentação longa', price: 29.90, old: 59.90 }, { id: 60, cat: 'broto', name: 'Pizza Broto', desc: 'Pizza 25cm com 4 fatias de puro sabor', price: 29.90, old: 59.90 }, { id: 70, cat: 'borda', name: 'Borda Recheada', desc: 'Borda recheada na legítima massa italiana', price: 19.99, old: 39.90 }];
-    const UPSELL_RULES = { default: [{ id: 70, name: 'Borda Recheada', desc: 'Massa italiana recheada', price: 19.99, reason: '🍞 Adicionar borda recheada?' }, { id: 60, name: 'Pizza Broto', desc: '25cm perfeita para acompanhar', price: 29.90, reason: '🍕 Que tal uma broto também?' }, { id: 41, name: 'Pizza Brigadeiro', desc: 'Sobremesa irresistível', price: 49.90, reason: '🍫 Ver uma sobremesa?' }], doces: [{ id: 1, name: 'Frango Catupiry', desc: 'A mais pedida da casa', price: 49.90, reason: '🍕 Complementa perfeitamente' }, { id: 70, name: 'Borda Recheada', desc: 'Deixa qualquer pizza melhor', price: 19.99, reason: '🍞 Adicionar borda?' }], combos: [{ id: 70, name: 'Borda Recheada', desc: 'Upgrade perfeito pro combo', price: 19.99, reason: '🍞 Adicionar borda no combo?' }] };
-    const CROSS_SELL_RULES = [{ trigger: c => c.some(i => ['tradicionais', 'especiais'].includes(i.cat)) && !c.find(i => i.id === 70), id: 70, title: 'Adicionar borda recheada?', sub: 'Quem pediu pizza amou a borda!' }, { trigger: c => c.some(i => i.cat === 'tradicionais' || i.cat === 'especiais') && !c.find(i => i.cat === 'doces'), id: 41, title: 'Guardar espaço para a sobremesa?', sub: 'Pizza Brigadeiro — a mais pedida!' }, { trigger: c => c.length >= 2 && !c.find(i => i.cat === 'combos'), id: 82, title: '⚡ Combo sai mais barato!', sub: '2 pizzas + Coca-Cola 2L por R$ 99,99' }];
+    <!-- UPSELL DRAWER -->
+    <div id="drawer-overlay"
+      style="position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:600;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)"
+      onclick="closeDrawer()"></div>
+    <div id="upsell-drawer"
+      style="position:fixed;bottom:0;left:0;right:0;z-index:700;transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.56,.64,1)">
+      <div
+        style="background:var(--dark3);border-radius:22px 22px 0 0;border-top:1px solid var(--border2);max-width:560px;margin:0 auto;overflow:hidden">
+        <div style="width:38px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 0"></div>
+        <div style="padding:18px 20px 14px;border-bottom:1px solid var(--border)">
+          <div style="font-family:'Bebas Neue',serif;font-size:25px;letter-spacing:1px;color:var(--text)">🔥 APROVEITE
+            TAMBÉM</div>
+          <div style="font-size:13px;color:var(--text2);margin-top:2px">Outros clientes também pediram:</div>
+        </div>
+        <div id="drawer-items"
+          style="padding:16px 20px;display:flex;flex-direction:column;gap:10px;max-height:55vh;overflow-y:auto"></div>
+        <button onclick="closeDrawer()"
+          style="margin:0 20px 20px;background:transparent;border:1px solid var(--border);color:var(--text3);border-radius:11px;padding:12px;width:calc(100% - 40px);font-size:14px;cursor:pointer;font-family:'Barlow',sans-serif">Não,
+          obrigado</button>
+      </div>
+    </div>
 
-    let cart = [], entregaVal = 'delivery', pagVal = 'pix', upsellShown = false;
+    <script>
+      const PHOTOS = { 80: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80', 81: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80', 82: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80', 1: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 2: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 3: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 10: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 11: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 12: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 13: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 14: 'https://images.unsplash.com/photo-1593504049359-74330189a345?w=400&q=80', 20: 'https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=80', 21: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 22: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 23: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 24: 'https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&q=80', 25: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80', 26: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&q=80', 27: 'https://images.unsplash.com/photo-1605470841229-8580aa6ad186?w=400&q=80', 29: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 30: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=80', 31: 'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=400&q=80', 32: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&q=80', 42: 'https://images.unsplash.com/photo-1582231242331-db6a9437976c?w=400&q=80', 43: 'https://images.unsplash.com/photo-1565257812910-ec9c10221fb0?w=400&q=80', 60: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80', 70: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80' };
+      const MENU = [{ id: 80, cat: 'combos', name: 'Combo Pizza Broto', desc: 'Pizza broto 25cm + Guaraná lata 350ml', price: 34.90, old: 79.90, tag: 'MAIS VENDIDO' }, { id: 81, cat: 'combos', name: 'Combo Pizza 2', desc: 'Pizza grande de até 2 sabores + bebida', price: 54.90, old: 109.90, tag: 'POPULAR' }, { id: 82, cat: 'combos', name: 'Combo de Pizza 1', desc: '2 pizzas grandes + Coca-Cola 2 litros', price: 99.99, old: 189.90, tag: 'MELHOR VALOR' }, { id: 1, cat: 'top-picks', name: 'Frango Catupiry', desc: 'Molho de tomate pelado, mussarela e catupiry especial', price: 49.90, old: 119.90, hot: true }, { id: 2, cat: 'top-picks', name: '4 Queijos', desc: 'Molho de tomate pelado, mussarela, catupiry, cheddar e parmesão', price: 49.90, old: 119.90, hot: true }, { id: 3, cat: 'top-picks', name: 'Calabresa', desc: 'Molho de tomate pelado, mussarela, calabresa e cebola', price: 49.90, old: 119.90, hot: true }, { id: 10, cat: 'tradicionais', name: 'Americana', desc: 'Molho de tomate pelado, mussarela, presunto, milho e ervilha', price: 49.90, old: 119.90 }, { id: 11, cat: 'tradicionais', name: 'Marguerita', desc: 'Molho de tomate pelado, mussarela, tomate cereja e manjericão', price: 49.90, old: 119.90 }, { id: 12, cat: 'tradicionais', name: 'Mussarela', desc: 'Molho de tomate pelado, mussarela e rodelas de tomate', price: 49.90, old: 119.90 }, { id: 13, cat: 'tradicionais', name: 'Calabresa', desc: 'Molho de tomate pelado, mussarela, calabresa e cebola', price: 49.90, old: 119.90 }, { id: 14, cat: 'tradicionais', name: 'Portuguesa', desc: 'Molho de tomate pelado, mussarela, presunto, pimentão e ovos', price: 49.90, old: 119.90 }, { id: 20, cat: 'especiais', name: 'Frango Catupiry', desc: 'Molho de tomate pelado, mussarela e catupiry especial', price: 49.90, old: 119.90 }, { id: 21, cat: 'especiais', name: '4 Queijos', desc: 'Mussarela, catupiry, cheddar e parmesão', price: 49.90, old: 119.90 }, { id: 22, cat: 'especiais', name: 'Caipira', desc: 'Mussarela, frango desfiado e milho', price: 49.90, old: 119.90 }, { id: 23, cat: 'especiais', name: 'Portobello', desc: 'Presunto, calabresa, ovos e milho', price: 49.90, old: 119.90 }, { id: 24, cat: 'especiais', name: 'Australiana', desc: 'Mussarela, calabresa e catupiry', price: 49.90, old: 119.90 }, { id: 25, cat: 'especiais', name: 'Crocante', desc: 'Mussarela, calabresa e barbecue', price: 49.90, old: 119.90 }, { id: 26, cat: 'especiais', name: 'Amoda', desc: 'Presunto, ovos, mussarela e creme', price: 49.90, old: 119.90 }, { id: 27, cat: 'especiais', name: 'Pizza de Bacon', desc: 'Mussarela e bacon em cubos', price: 49.90, old: 119.90 }, { id: 28, cat: 'especiais', name: 'Lombo Canadense', desc: 'Mussarela e lombo canadense', price: 49.90, old: 149.90 }, { id: 29, cat: 'especiais', name: 'Carne de Sol', desc: 'Mussarela e carne de sol', price: 49.90, old: 149.90 }, { id: 30, cat: 'especiais', name: 'Churrasco', desc: 'Mussarela e churrasco desfiado', price: 49.90, old: 149.90 }, { id: 31, cat: 'especiais', name: 'Peperone', desc: 'Molho especial, mussarela, peperone e manjericão', price: 59.90, old: 149.90 }, { id: 32, cat: 'especiais', name: 'Especial da Casa', desc: 'Mussarela, presunto e calabresa', price: 49.90, old: 119.90 }, { id: 40, cat: 'doces', name: 'Banoff', desc: 'Banana em rodelas com doce de leite cremoso', price: 49.90, old: 119.90 }, { id: 41, cat: 'doces', name: 'Pizza de Brigadeiro', desc: 'Chocolate com avelã, granulado e morango', price: 49.90, old: 119.90 }, { id: 42, cat: 'doces', name: 'Pizza de Cocada', desc: 'Coco ralado, leite condensado e creme de leite', price: 49.90, old: 119.90 }, { id: 43, cat: 'doces', name: 'Pizza de Churros', desc: 'Doce de leite cremoso com açúcar e canela', price: 49.90, old: 119.90 }, { id: 44, cat: 'doces', name: 'Banana com Canela', desc: 'Banana caramelizada com canela', price: 49.90, old: 119.90 }, { id: 45, cat: 'doces', name: 'Pizza de Chocolate com Morango', desc: 'Chocolate com morango fresco', price: 49.90, old: 119.90 }, { id: 46, cat: 'doces', name: 'Pizza de Prestígio', desc: 'Chocolate com coco ralado', price: 49.90, old: 119.90 }, { id: 47, cat: 'doces', name: 'Pizza de Banana Nevada', desc: 'Banana com coco ralado e leite condensado', price: 49.90, old: 119.90 }, { id: 48, cat: 'doces', name: 'Pizza de Romeu e Julieta', desc: 'Goiabada com catupiry especial', price: 49.90, old: 149.90 }, { id: 50, cat: 'calzones', name: 'Calzone Tradicional', desc: 'Massa italiana de fermentação longa', price: 29.90, old: 59.90 }, { id: 60, cat: 'broto', name: 'Pizza Broto', desc: 'Pizza 25cm com 4 fatias de puro sabor', price: 29.90, old: 59.90 }, { id: 70, cat: 'borda', name: 'Borda Recheada', desc: 'Borda recheada na legítima massa italiana', price: 19.99, old: 39.90 }];
+      const UPSELL_RULES = { default: [{ id: 70, name: 'Borda Recheada', desc: 'Massa italiana recheada', price: 19.99, reason: '🍞 Adicionar borda recheada?' }, { id: 60, name: 'Pizza Broto', desc: '25cm perfeita para acompanhar', price: 29.90, reason: '🍕 Que tal uma broto também?' }, { id: 41, name: 'Pizza Brigadeiro', desc: 'Sobremesa irresistível', price: 49.90, reason: '🍫 Ver uma sobremesa?' }], doces: [{ id: 1, name: 'Frango Catupiry', desc: 'A mais pedida da casa', price: 49.90, reason: '🍕 Complementa perfeitamente' }, { id: 70, name: 'Borda Recheada', desc: 'Deixa qualquer pizza melhor', price: 19.99, reason: '🍞 Adicionar borda?' }], combos: [{ id: 70, name: 'Borda Recheada', desc: 'Upgrade perfeito pro combo', price: 19.99, reason: '🍞 Adicionar borda no combo?' }] };
+      const CROSS_SELL_RULES = [{ trigger: c => c.some(i => ['tradicionais', 'especiais'].includes(i.cat)) && !c.find(i => i.id === 70), id: 70, title: 'Adicionar borda recheada?', sub: 'Quem pediu pizza amou a borda!' }, { trigger: c => c.some(i => i.cat === 'tradicionais' || i.cat === 'especiais') && !c.find(i => i.cat === 'doces'), id: 41, title: 'Guardar espaço para a sobremesa?', sub: 'Pizza Brigadeiro — a mais pedida!' }, { trigger: c => c.length >= 2 && !c.find(i => i.cat === 'combos'), id: 82, title: '⚡ Combo sai mais barato!', sub: '2 pizzas + Coca-Cola 2L por R$ 99,99' }];
 
-    // ... (PARTICLES & CURSOR remain same) ...
-    // PARTICLES logic ends here
-    // CURSOR logic ends here
+      let cart = [], entregaVal = 'delivery', pagVal = 'pix', upsellShown = false;
 
-    function renderMenu() {
-      const combosEl = document.getElementById('sec-combos');
-      const combos = MENU.filter(m => m.cat === 'combos');
-      let ch = `<div class="fire-tag">🔥 Melhor custo-benefício</div><div class="sec-title">COMBOS <em>IMPERDÍVEIS</em></div><div class="combo-stack">`;
-      combos.forEach((c, i) => {
-        const save = Math.round(c.old - c.price), cdId = `cd-${c.id}`, cdMins = [14, 19, 9][i] || 12;
-        ch += `<div class="combo-card reveal"><div class="combo-top-bar"></div><div class="combo-img-wrap"><img class="combo-img" src="${PHOTOS[c.id] || ''}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'"><div class="combo-img-overlay"></div>${c.tag ? `<div class="combo-tag">⚡ ${c.tag}</div>` : ''}<div class="combo-save-pill">Economize R$ ${save}</div></div><div class="combo-body"><div class="combo-name">${c.name}</div><div class="combo-desc">${c.desc}</div><div class="combo-price-row"><span class="combo-price">R$ ${c.price.toFixed(2).replace('.', ',')}</span><span class="combo-old">era R$ ${c.old.toFixed(2).replace('.', ',')}</span><span class="combo-economy">-${Math.round((1 - c.price / c.old) * 100)}%</span></div><div class="combo-urgency">🔥 Oferta por tempo limitado <span class="combo-cd" id="${cdId}"></span></div><button class="combo-cta" onclick="addToCart(${c.id})">🛒 ADICIONAR AO CARRINHO</button></div></div>`;
-        let secs = cdMins * 60;
-        setInterval(() => { secs--; if (secs < 0) secs = cdMins * 60; const el = document.getElementById(cdId); if (el) el.textContent = `${String(Math.floor(secs / 60)).padStart(2, '0')}:${String(secs % 60).padStart(2, '0')}`; }, 1000);
-        setTimeout(() => { const el = document.getElementById(cdId); if (el) el.textContent = `${String(cdMins).padStart(2, '0')}:00`; }, 80);
-      });
-      ch += `</div>`; combosEl.innerHTML = ch;
-      ['top-picks', 'tradicionais', 'especiais', 'doces', 'calzones', 'broto', 'borda'].forEach(cat => {
-        const col = document.getElementById(`col-${cat}`); if (!col) return;
-        const items = MENU.filter(m => m.cat === cat); col.innerHTML = '';
-        items.forEach((item, i) => {
-          const disc = Math.round((1 - item.price / item.old) * 100), imgSrc = PHOTOS[item.id];
-          const imgHtml = imgSrc ? `<img class="item-img" src="${imgSrc}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=item-img-placeholder>🍕</div>'">` : `<div class="item-img-placeholder">🍕</div>`;
-          col.innerHTML += `<div class="item-card reveal" style="transition-delay:${i * .04}s">${item.hot ? '<div class="hot-dot"></div>' : ''}<div class="item-inner"><div class="item-img-wrap">${imgHtml}</div><div class="item-details"><div><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><div class="item-foot"><div class="item-prices"><span class="item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span><span class="item-old">R$ ${item.old.toFixed(2).replace('.', ',')}</span><span class="item-disc">-${disc}%</span></div><button class="add-btn" onclick="addToCart(${item.id})">+ ADD</button></div></div></div></div>`;
+      // ... (PARTICLES & CURSOR remain same) ...
+      // PARTICLES logic ends here
+      // CURSOR logic ends here
+
+      function renderMenu() {
+        const combosEl = document.getElementById('sec-combos');
+        const combos = MENU.filter(m => m.cat === 'combos');
+        let ch = `<div class="fire-tag">🔥 Melhor custo-benefício</div><div class="sec-title">COMBOS <em>IMPERDÍVEIS</em></div><div class="combo-stack">`;
+        combos.forEach((c, i) => {
+          const save = Math.round(c.old - c.price), cdId = `cd-${c.id}`, cdMins = [14, 19, 9][i] || 12;
+          ch += `<div class="combo-card reveal"><div class="combo-top-bar"></div><div class="combo-img-wrap"><img class="combo-img" src="${PHOTOS[c.id] || ''}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'"><div class="combo-img-overlay"></div>${c.tag ? `<div class="combo-tag">⚡ ${c.tag}</div>` : ''}<div class="combo-save-pill">Economize R$ ${save}</div></div><div class="combo-body"><div class="combo-name">${c.name}</div><div class="combo-desc">${c.desc}</div><div class="combo-price-row"><span class="combo-price">R$ ${c.price.toFixed(2).replace('.', ',')}</span><span class="combo-old">era R$ ${c.old.toFixed(2).replace('.', ',')}</span><span class="combo-economy">-${Math.round((1 - c.price / c.old) * 100)}%</span></div><div class="combo-urgency">🔥 Oferta por tempo limitado <span class="combo-cd" id="${cdId}"></span></div><button class="combo-cta" onclick="addToCart(${c.id})">🛒 ADICIONAR AO CARRINHO</button></div></div>`;
+          let secs = cdMins * 60;
+          setInterval(() => { secs--; if (secs < 0) secs = cdMins * 60; const el = document.getElementById(cdId); if (el) el.textContent = `${String(Math.floor(secs / 60)).padStart(2, '0')}:${String(secs % 60).padStart(2, '0')}`; }, 1000);
+          setTimeout(() => { const el = document.getElementById(cdId); if (el) el.textContent = `${String(cdMins).padStart(2, '0')}:00`; }, 80);
         });
-      });
-      setTimeout(() => { const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target) } }) }, { threshold: .08 }); document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }, 100);
-    }
-
-    function addToCart(id) {
-      const item = MENU.find(m => m.id === id); if (!item) return;
-      const ex = cart.find(c => c.id === id); if (ex) ex.qty++; else cart.push({ ...item, qty: 1 });
-      updateCartUI(); showToast(`✅ ${item.name} adicionado!`);
-      const rules = UPSELL_RULES[item.cat] || UPSELL_RULES.default;
-      const avail = rules.filter(r => !cart.find(c => c.id === r.id));
-      if (avail.length && !upsellShown) {
-        upsellShown = true;
-        setTimeout(() => showUpsell(avail), 500);
+        ch += `</div>`; combosEl.innerHTML = ch;
+        ['top-picks', 'tradicionais', 'especiais', 'doces', 'calzones', 'broto', 'borda'].forEach(cat => {
+          const col = document.getElementById(`col-${cat}`); if (!col) return;
+          const items = MENU.filter(m => m.cat === cat); col.innerHTML = '';
+          items.forEach((item, i) => {
+            const disc = Math.round((1 - item.price / item.old) * 100), imgSrc = PHOTOS[item.id];
+            const imgHtml = imgSrc ? `<img class="item-img" src="${imgSrc}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=item-img-placeholder>🍕</div>'">` : `<div class="item-img-placeholder">🍕</div>`;
+            col.innerHTML += `<div class="item-card reveal" style="transition-delay:${i * .04}s">${item.hot ? '<div class="hot-dot"></div>' : ''}<div class="item-inner"><div class="item-img-wrap">${imgHtml}</div><div class="item-details"><div><div class="item-name">${item.name}</div><div class="item-desc">${item.desc}</div></div><div class="item-foot"><div class="item-prices"><span class="item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span><span class="item-old">R$ ${item.old.toFixed(2).replace('.', ',')}</span><span class="item-disc">-${disc}%</span></div><button class="add-btn" onclick="addToCart(${item.id})">+ ADD</button></div></div></div></div>`;
+          });
+        });
+        setTimeout(() => { const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target) } }) }, { threshold: .08 }); document.querySelectorAll('.reveal').forEach(el => obs.observe(el)); }, 100);
       }
-      setTimeout(renderCrossSell, 600);
-      const b = document.getElementById('cpill-count'); b.style.transform = 'scale(1.6)'; setTimeout(() => b.style.transform = '', 300);
-    }
-    function changeQty(id, d) { const item = cart.find(c => c.id === id); if (!item) return; item.qty += d; if (item.qty <= 0) cart = cart.filter(c => c.id !== id); updateCartUI(); renderCartPage(); }
-    function getTotal() { return cart.reduce((s, c) => s + c.price * c.qty, 0) }
-    function getQty() { return cart.reduce((s, c) => s + c.qty, 0) }
-    function updateCartUI() {
-      const qty = getQty(), fee = entregaVal === 'delivery' ? 7 : 0, total = getTotal() + fee;
-      document.getElementById('cpill-count').textContent = qty;
-      document.getElementById('cpill-total').textContent = `R$ ${total.toFixed(0)}`;
-      document.getElementById('cfi-qty').textContent = `${qty} ${qty === 1 ? 'item' : 'itens'}`;
-      document.getElementById('cfi-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-      const fl = document.getElementById('cart-float'); qty > 0 ? fl.classList.add('on') : fl.classList.remove('on');
-    }
-    function renderCartPage() {
-      const el = document.getElementById('cart-content');
-      if (!cart.length) { el.innerHTML = `<div class="empty"><div class="empty-ico">🛒</div><div style="color:var(--text);font-size:16px;margin-bottom:6px">Carrinho vazio</div><div>Adicione itens do cardápio</div></div>`; return; }
-      const fee = entregaVal === 'delivery' ? 7 : 0, sub = getTotal();
-      let html = '';
-      cart.forEach(item => {
-        const img = PHOTOS[item.id] ? `<img class="ci-img" src="${PHOTOS[item.id]}" alt="${item.name}" onerror="this.style.display='none'">` : `<div class="ci-img" style="display:flex;align-items:center;justify-content:center;font-size:22px">🍕</div>`;
-        html += `<div class="ci-row">${img}<div class="ci-info"><div class="ci-name">${item.name}</div><div class="ci-price">R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}</div></div><div class="qty-ctrl"><button class="qb" onclick="changeQty(${item.id},-1)">−</button><span class="qn">${item.qty}</span><button class="qb" onclick="changeQty(${item.id},1)">+</button></div></div>`;
-      });
-      html += `<div class="sum-box"><div class="sum-row"><span>Subtotal</span><span>R$ ${sub.toFixed(2).replace('.', ',')}</span></div><div class="sum-row"><span>Entrega</span><span>${fee > 0 ? 'R$ ' + fee.toFixed(2).replace('.', ',') : 'Grátis'}</span></div><div class="sum-row total"><span>TOTAL</span><span>R$ ${(sub + fee).toFixed(2).replace('.', ',')}</span></div></div>`;
-      el.innerHTML = html;
-    }
-    function showUpsell(items) {
-      const el = document.getElementById('drawer-items'); el.innerHTML = '';
-      items.slice(0, 3).forEach(u => {
-        const img = PHOTOS[u.id] ? `<img src="${PHOTOS[u.id]}" style="width:46px;height:46px;border-radius:9px;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">` : '';
-        el.innerHTML += `<div style="background:var(--dark4);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;align-items:center;gap:11px">${img}<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px">${u.reason || u.name}</div><div style="font-size:11px;color:var(--text2)">${u.desc}</div></div><button onclick="addToCart(${u.id});closeDrawer()" style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 13px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Barlow',sans-serif">+ ADD</button></div>`;
-      });
-      document.getElementById('drawer-overlay').style.opacity = '1'; document.getElementById('drawer-overlay').style.pointerEvents = 'all'; document.getElementById('upsell-drawer').style.transform = 'translateY(0)';
-    }
-    function closeDrawer() { document.getElementById('drawer-overlay').style.opacity = '0'; document.getElementById('drawer-overlay').style.pointerEvents = 'none'; document.getElementById('upsell-drawer').style.transform = 'translateY(100%)'; }
-    function renderCrossSell() {
-      const area = document.getElementById('cross-area'); if (!area) return; area.innerHTML = '';
-      CROSS_SELL_RULES.forEach(r => {
-        if (!r.trigger(cart)) return;
-        const item = MENU.find(m => m.id === r.id); if (!item) return;
-        area.innerHTML += `<div class="cross-banner" onclick="addToCart(${r.id})">${PHOTOS[r.id] ? `<img src="${PHOTOS[r.id]}" style="width:42px;height:42px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">` : ''}<div class="cross-text"><div class="cross-title">${r.title}</div><div class="cross-sub">${r.sub}</div></div><span class="cross-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span><button class="cross-add" onclick="event.stopPropagation();addToCart(${r.id})">+ ADD</button></div>`;
-      });
-    }
-    function jumpTo(id, btn) { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on')); if (btn) btn.classList.add('on'); const sec = document.getElementById(`sec-${id}`); if (sec) { const y = sec.getBoundingClientRect().top + window.scrollY - 88; window.scrollTo({ top: y, behavior: 'smooth' }); } }
-    function openOverlay(name) { const el = document.getElementById(`ov-${name}`); if (!el) return; el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow = 'hidden'; if (name === 'cart') renderCartPage(); if (name === 'checkout') { renderCoSummary(); selE(entregaVal); selP(pagVal); } }
-    function closeOverlay(name) { const el = document.getElementById(`ov-${name}`); if (!el) return; el.classList.remove('open'); document.body.style.overflow = ''; }
-    function selE(v) { entregaVal = v;['delivery', 'retirada'].forEach(x => { const el = document.getElementById(`e-${x}`), r = document.getElementById(`r-${x}`); el.classList.toggle('sel', x === v); r.textContent = x === v ? '✓' : ''; }); updateCartUI(); renderCoSummary(); }
-    function selP(v) { pagVal = v;['pix', 'cartao', 'dinheiro'].forEach(x => { const el = document.getElementById(`p-${x}`), r = document.getElementById(`r-${x}`); el.classList.toggle('sel', x === v); r.textContent = x === v ? '✓' : ''; }); document.getElementById('troco-box').style.display = v === 'dinheiro' ? 'block' : 'none'; }
-    function renderCoSummary() { const fee = entregaVal === 'delivery' ? 7 : 0, sub = getTotal(); let h = ''; cart.forEach(i => h += `<div class="sum-row"><span>${i.qty}x ${i.name}</span><span>R$ ${(i.price * i.qty).toFixed(2).replace('.', ',')}</span></div>`); h += `<div class="sum-row"><span>Entrega</span><span>${fee > 0 ? 'R$ ' + fee.toFixed(2).replace('.', ',') : 'Grátis'}</span></div><div class="sum-row total"><span>TOTAL</span><span>R$ ${(sub + fee).toFixed(2).replace('.', ',')}</span></div>`; const el = document.getElementById('co-summary'); if (el) el.innerHTML = h; }
 
-    async function placeOrder() {
-      const nome = document.getElementById('f-nome').value.trim();
-      const tel = document.getElementById('f-tel').value.trim();
-      const rua = document.getElementById('f-rua').value.trim();
-      const num = document.getElementById('f-num').value.trim();
-      const bairro = document.getElementById('f-bairro').value.trim();
-      if (!nome || !tel) { showToast('⚠️ Preencha nome e telefone!', 'err'); return; }
-      if (entregaVal === 'delivery' && (!rua || !num || !bairro)) { showToast('⚠️ Preencha o endereço completo!', 'err'); return; }
-      if (!cart.length) { showToast('⚠️ Carrinho vazio!', 'err'); return; }
-      if (!window._dbReady) { showToast('⚠️ Aguardando conexão...', 'err'); return; }
-
-      const fee = entregaVal === 'delivery' ? 7 : 0;
-      const troco = pagVal === 'dinheiro' ? document.getElementById('f-troco').value : null;
-      const comp = document.getElementById('f-comp').value.trim();
-      const order = {
-        time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
-        date: new Date().toLocaleDateString('pt-BR'),
-        status: 'novo', nome, tel, rua, num, bairro, comp,
-        entrega: entregaVal, pagamento: pagVal, troco,
-        items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, qty: i.qty })),
-        subtotal: getTotal(), fee, total: getTotal() + fee
-      };
-
-      document.getElementById('sending-overlay').classList.add('show');
-      try {
-        const { data: supaData, error: supaError } = await window._supabase
-          .from('fluxo_pedidos')
-          .insert([order])
-          .select();
-
-        if (supaError) throw supaError;
-
-        let orderId = '000';
-        if (supaData && supaData.length > 0) {
-          orderId = supaData[0].id.toString().padStart(3, '0');
-        } else {
-          // Se o select falhar (RLS), usamos os últimos 3 dígitos do timestamp para não quebrar a tela de sucesso
-          orderId = Date.now().toString().slice(-3);
+      function addToCart(id) {
+        const item = MENU.find(m => m.id === id); if (!item) return;
+        const ex = cart.find(c => c.id === id); if (ex) ex.qty++; else cart.push({ ...item, qty: 1 });
+        updateCartUI(); showToast(`✅ ${item.name} adicionado!`);
+        const rules = UPSELL_RULES[item.cat] || UPSELL_RULES.default;
+        const avail = rules.filter(r => !cart.find(c => c.id === r.id));
+        if (avail.length && !upsellShown) {
+          upsellShown = true;
+          setTimeout(() => showUpsell(avail), 500);
         }
-
-        document.getElementById('suc-num').textContent = `#${orderId}`;
-        closeOverlay('checkout');
-        openOverlay('success');
-        playSound();
-        cart = []; updateCartUI();
-        upsellShown = false; // Reset para próximo pedido
-      } catch (e) {
-        showToast('❌ Erro ao enviar pedido. Tente novamente.', 'err');
-        console.error(e);
-      } finally {
-        document.getElementById('sending-overlay').classList.remove('show');
+        setTimeout(renderCrossSell, 600);
+        const b = document.getElementById('cpill-count'); b.style.transform = 'scale(1.6)'; setTimeout(() => b.style.transform = '', 300);
       }
-    }
+      function changeQty(id, d) { const item = cart.find(c => c.id === id); if (!item) return; item.qty += d; if (item.qty <= 0) cart = cart.filter(c => c.id !== id); updateCartUI(); renderCartPage(); }
+      function getTotal() { return cart.reduce((s, c) => s + c.price * c.qty, 0) }
+      function getQty() { return cart.reduce((s, c) => s + c.qty, 0) }
+      function updateCartUI() {
+        const qty = getQty(), fee = entregaVal === 'delivery' ? 7 : 0, total = getTotal() + fee;
+        document.getElementById('cpill-count').textContent = qty;
+        document.getElementById('cpill-total').textContent = `R$ ${total.toFixed(0)}`;
+        document.getElementById('cfi-qty').textContent = `${qty} ${qty === 1 ? 'item' : 'itens'}`;
+        document.getElementById('cfi-total').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        const fl = document.getElementById('cart-float'); qty > 0 ? fl.classList.add('on') : fl.classList.remove('on');
+      }
+      function renderCartPage() {
+        const el = document.getElementById('cart-content');
+        if (!cart.length) { el.innerHTML = `<div class="empty"><div class="empty-ico">🛒</div><div style="color:var(--text);font-size:16px;margin-bottom:6px">Carrinho vazio</div><div>Adicione itens do cardápio</div></div>`; return; }
+        const fee = entregaVal === 'delivery' ? 7 : 0, sub = getTotal();
+        let html = '';
+        cart.forEach(item => {
+          const img = PHOTOS[item.id] ? `<img class="ci-img" src="${PHOTOS[item.id]}" alt="${item.name}" onerror="this.style.display='none'">` : `<div class="ci-img" style="display:flex;align-items:center;justify-content:center;font-size:22px">🍕</div>`;
+          html += `<div class="ci-row">${img}<div class="ci-info"><div class="ci-name">${item.name}</div><div class="ci-price">R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}</div></div><div class="qty-ctrl"><button class="qb" onclick="changeQty(${item.id},-1)">−</button><span class="qn">${item.qty}</span><button class="qb" onclick="changeQty(${item.id},1)">+</button></div></div>`;
+        });
+        html += `<div class="sum-box"><div class="sum-row"><span>Subtotal</span><span>R$ ${sub.toFixed(2).replace('.', ',')}</span></div><div class="sum-row"><span>Entrega</span><span>${fee > 0 ? 'R$ ' + fee.toFixed(2).replace('.', ',') : 'Grátis'}</span></div><div class="sum-row total"><span>TOTAL</span><span>R$ ${(sub + fee).toFixed(2).replace('.', ',')}</span></div></div>`;
+        el.innerHTML = html;
+      }
+      function showUpsell(items) {
+        const el = document.getElementById('drawer-items'); el.innerHTML = '';
+        items.slice(0, 3).forEach(u => {
+          const img = PHOTOS[u.id] ? `<img src="${PHOTOS[u.id]}" style="width:46px;height:46px;border-radius:9px;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">` : '';
+          el.innerHTML += `<div style="background:var(--dark4);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;align-items:center;gap:11px">${img}<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px">${u.reason || u.name}</div><div style="font-size:11px;color:var(--text2)">${u.desc}</div></div><button onclick="addToCart(${u.id});closeDrawer()" style="background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 13px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Barlow',sans-serif">+ ADD</button></div>`;
+        });
+        document.getElementById('drawer-overlay').style.opacity = '1'; document.getElementById('drawer-overlay').style.pointerEvents = 'all'; document.getElementById('upsell-drawer').style.transform = 'translateY(0)';
+      }
+      function closeDrawer() { document.getElementById('drawer-overlay').style.opacity = '0'; document.getElementById('drawer-overlay').style.pointerEvents = 'none'; document.getElementById('upsell-drawer').style.transform = 'translateY(100%)'; }
+      function renderCrossSell() {
+        const area = document.getElementById('cross-area'); if (!area) return; area.innerHTML = '';
+        CROSS_SELL_RULES.forEach(r => {
+          if (!r.trigger(cart)) return;
+          const item = MENU.find(m => m.id === r.id); if (!item) return;
+          area.innerHTML += `<div class="cross-banner" onclick="addToCart(${r.id})">${PHOTOS[r.id] ? `<img src="${PHOTOS[r.id]}" style="width:42px;height:42px;border-radius:8px;object-fit:cover;flex-shrink:0" onerror="this.style.display='none'">` : ''}<div class="cross-text"><div class="cross-title">${r.title}</div><div class="cross-sub">${r.sub}</div></div><span class="cross-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span><button class="cross-add" onclick="event.stopPropagation();addToCart(${r.id})">+ ADD</button></div>`;
+        });
+      }
+      function jumpTo(id, btn) { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on')); if (btn) btn.classList.add('on'); const sec = document.getElementById(`sec-${id}`); if (sec) { const y = sec.getBoundingClientRect().top + window.scrollY - 88; window.scrollTo({ top: y, behavior: 'smooth' }); } }
+      function openOverlay(name) { const el = document.getElementById(`ov-${name}`); if (!el) return; el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow = 'hidden'; if (name === 'cart') renderCartPage(); if (name === 'checkout') { renderCoSummary(); selE(entregaVal); selP(pagVal); } }
+      function closeOverlay(name) { const el = document.getElementById(`ov-${name}`); if (!el) return; el.classList.remove('open'); document.body.style.overflow = ''; }
+      function selE(v) { entregaVal = v;['delivery', 'retirada'].forEach(x => { const el = document.getElementById(`e-${x}`), r = document.getElementById(`r-${x}`); el.classList.toggle('sel', x === v); r.textContent = x === v ? '✓' : ''; }); updateCartUI(); renderCoSummary(); }
+      function selP(v) { pagVal = v;['pix', 'cartao', 'dinheiro'].forEach(x => { const el = document.getElementById(`p-${x}`), r = document.getElementById(`r-${x}`); el.classList.toggle('sel', x === v); r.textContent = x === v ? '✓' : ''; }); document.getElementById('troco-box').style.display = v === 'dinheiro' ? 'block' : 'none'; }
+      function renderCoSummary() { const fee = entregaVal === 'delivery' ? 7 : 0, sub = getTotal(); let h = ''; cart.forEach(i => h += `<div class="sum-row"><span>${i.qty}x ${i.name}</span><span>R$ ${(i.price * i.qty).toFixed(2).replace('.', ',')}</span></div>`); h += `<div class="sum-row"><span>Entrega</span><span>${fee > 0 ? 'R$ ' + fee.toFixed(2).replace('.', ',') : 'Grátis'}</span></div><div class="sum-row total"><span>TOTAL</span><span>R$ ${(sub + fee).toFixed(2).replace('.', ',')}</span></div>`; const el = document.getElementById('co-summary'); if (el) el.innerHTML = h; }
 
-    function resetApp() { cart = []; updateCartUI(); closeOverlay('success');['f-nome', 'f-tel', 'f-rua', 'f-num', 'f-comp', 'f-bairro', 'f-troco'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; }); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    function showToast(msg, type = '') { const t = document.getElementById('toast'); t.textContent = msg; t.className = 'toast show' + (type ? ' ' + type : ''); setTimeout(() => t.className = 'toast', 2800); }
-    function playSound() { try { const ac = new (window.AudioContext || window.webkitAudioContext)();[880, 1100, 1320].forEach((f, i) => { const o = ac.createOscillator(), g = ac.createGain(); o.connect(g); g.connect(ac.destination); o.frequency.value = f; g.gain.setValueAtTime(0.18, ac.currentTime + i * .12); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + i * .12 + .24); o.start(ac.currentTime + i * .12); o.stop(ac.currentTime + i * .12 + .24); }); } catch (e) { } }
+      async function placeOrder() {
+        const nome = document.getElementById('f-nome').value.trim();
+        const tel = document.getElementById('f-tel').value.trim();
+        const rua = document.getElementById('f-rua').value.trim();
+        const num = document.getElementById('f-num').value.trim();
+        const bairro = document.getElementById('f-bairro').value.trim();
+        if (!nome || !tel) { showToast('⚠️ Preencha nome e telefone!', 'err'); return; }
+        if (entregaVal === 'delivery' && (!rua || !num || !bairro)) { showToast('⚠️ Preencha o endereço completo!', 'err'); return; }
+        if (!cart.length) { showToast('⚠️ Carrinho vazio!', 'err'); return; }
+        if (!window._dbReady) { showToast('⚠️ Aguardando conexão...', 'err'); return; }
 
-    renderMenu(); updateCartUI(); selE('delivery'); selP('pix');
-  </script>
+        const fee = entregaVal === 'delivery' ? 7 : 0;
+        const troco = pagVal === 'dinheiro' ? document.getElementById('f-troco').value : null;
+        const comp = document.getElementById('f-comp').value.trim();
+        const order = {
+          time: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+          date: new Date().toLocaleDateString('pt-BR'),
+          status: 'novo', nome, tel, rua, num, bairro, comp,
+          entrega: entregaVal, pagamento: pagVal, troco,
+          items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, qty: i.qty })),
+          subtotal: getTotal(), fee, total: getTotal() + fee
+        };
+
+        document.getElementById('sending-overlay').classList.add('show');
+        try {
+          const { data: supaData, error: supaError } = await window._supabase
+            .from('fluxo_pedidos')
+            .insert([order])
+            .select();
+
+          if (supaError) throw supaError;
+
+          let orderId = '000';
+          if (supaData && supaData.length > 0) {
+            orderId = supaData[0].id.toString().padStart(3, '0');
+          } else {
+            // Se o select falhar (RLS), usamos os últimos 3 dígitos do timestamp para não quebrar a tela de sucesso
+            orderId = Date.now().toString().slice(-3);
+          }
+
+          document.getElementById('suc-num').textContent = `#${orderId}`;
+          closeOverlay('checkout');
+          openOverlay('success');
+          playSound();
+          cart = []; updateCartUI();
+          upsellShown = false; // Reset para próximo pedido
+        } catch (e) {
+          showToast('❌ Erro ao enviar pedido. Tente novamente.', 'err');
+          console.error(e);
+        } finally {
+          document.getElementById('sending-overlay').classList.remove('show');
+        }
+      }
+
+      function resetApp() { cart = []; updateCartUI(); closeOverlay('success');['f-nome', 'f-tel', 'f-rua', 'f-num', 'f-comp', 'f-bairro', 'f-troco'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; }); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      function showToast(msg, type = '') { const t = document.getElementById('toast'); t.textContent = msg; t.className = 'toast show' + (type ? ' ' + type : ''); setTimeout(() => t.className = 'toast', 2800); }
+      function playSound() { try { const ac = new (window.AudioContext || window.webkitAudioContext)();[880, 1100, 1320].forEach((f, i) => { const o = ac.createOscillator(), g = ac.createGain(); o.connect(g); g.connect(ac.destination); o.frequency.value = f; g.gain.setValueAtTime(0.18, ac.currentTime + i * .12); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + i * .12 + .24); o.start(ac.currentTime + i * .12); o.stop(ac.currentTime + i * .12 + .24); }); } catch (e) { } }
+
+      renderMenu(); updateCartUI(); selE('delivery'); selP('pix');
+    </script>
 </body>
 
 </html>
